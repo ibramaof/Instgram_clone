@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: "Source Sans 3", sans-serif;
+
+}
+
+
+
+header {
+    border: 2px solid black;
+    width: 375px;
+    height: 67px;
+    margin: 50px auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-img {
+    width: 127px;
+    height: 33.02px;
+    margin: 15px 0 17.98px 15px;
+}
+
+.user-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin: 16px 16px 17px 0;
+}
