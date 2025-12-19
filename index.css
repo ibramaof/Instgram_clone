@@ -1,21 +1,69 @@
+/* General Styles */
+
 body {
     margin: 0;
     font-family: "Source Sans 3", sans-serif;
+    background-color: #F5F5F5;
 
 }
 
+/* Typography */
+
+.post-header-typography .name,
+.likes,
+.post-caption {
+    font-size: 13px;
+}
+
+.post-header-typography .name,
+.post-header-typography .location {
+    color: #000000;
+}
+
+.post-header-typography .name,
+.likes,
+.username {
+    font-weight: bold;
+}
+
+.post-header-typography .name {
+    margin: 11px 0 0 0;
+}
+
+.post-header-typography .location {
+    font-size: 12px;
+    margin: 0 0 13px 0;
+}
+
+.likes {
+    margin: 11.87px 0 12px 13px;
+}
+
+.post-caption {
+    margin: 12px 0 16px 13px;
+}
 
 
+/* Layout */
+
+/* header */
 header {
-    border: 2px solid black;
+    border-bottom: 1px solid #C6C6C6;
     width: 375px;
     height: 67px;
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
+    background-color: #FFFFFF;
+}
+
+.post {
+    margin-top: 0;
+
 }
 
 .main-header {
     display: flex;
     justify-content: space-between;
+
 }
 
 .logo-img {
@@ -29,4 +77,70 @@ header {
     height: 34px;
     border-radius: 50%;
     margin: 16px 16px 17px 0;
+}
+
+/* Post layout */
+.post-header {
+    width: 375px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    display: flex;
+}
+
+.post-user-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin: 10px 7px 11px 10px;
+}
+
+.post-container-img {
+    margin: 0 auto;
+    width: 375px;
+    height: 375px;
+
+}
+
+.post-img {
+    height: 375px;
+    width: 375px;
+}
+
+.post-footer {
+    width: 375px;
+    height: 115px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.icons {
+    width: 106px;
+    height: 23px;
+    padding: 21px 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* Icons */
+#icons-heart {
+    width: 22.3px;
+    height: 18.65px;
+}
+
+#icons-comment {
+    width: 22.65px;
+    height: 18.65px;
+}
+
+#icons-dm {
+    width: 22.38px;
+    height: 18.65px;
+}
+
+#icons-heart:hover,
+#icons-dm:hover,
+#icons-comment:hover {
+    transform: scale(1.2);
 }
