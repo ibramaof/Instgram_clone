@@ -114,6 +114,9 @@ header {
     margin: 0 auto;
 }
 
+
+
+/* Icons */
 .icons {
     width: 106px;
     height: 23px;
@@ -123,7 +126,6 @@ header {
 
 }
 
-/* Icons */
 #icons-heart {
     width: 22.3px;
     height: 18.65px;
