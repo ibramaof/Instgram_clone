@@ -11,20 +11,20 @@ const main = document.getElementById("posts-el")
 
 function renderPost() {
     let renderPost = ''
-    for (let postEl in posts) {
+    for (let postEl of posts) {
         renderPost += `
         <section class="post">
             <div class="post-header">
                 <div>
-                    <img id="post-user-img" class="post-user-img" src="${posts[postEl].avatar}" alt="avatar-courbet">
+                    <img id="post-user-img" class="post-user-img" src="${postEl.avatar}" alt="avatar-courbet">
                 </div>
                 <div class="post-header-typography">
-                    <p id="name" class="name">${posts[postEl].name}</p>
-                    <p id="location" class="location">${posts[postEl].location}</p>
+                    <p id="name" class="name">${postEl.name}</p>
+                    <p id="location" class="location">${postEl.location}</p>
                 </div>
             </div>
             <div class="post-container-img">
-                <img id="post-img" class="post-img" src="${posts[postEl].post}" alt="post - courbet">
+                <img id="post-img" class="post-img" src="${postEl.post}" alt="post - courbet">
             </div>
             <div class="post-footer">
                 <div class="icons">
@@ -33,10 +33,10 @@ function renderPost() {
                             <img id="icons-dm" src="images/icon-dm.png" alt="icon-dm">
                             </div>
                             <div class="post-info">
-                                <p id="like-count" class="likes">${posts[postEl].likes} Likes</p>
+                                <p id="like-count" class="likes">${postEl.likes} Likes</p>
                                 <p class="post-caption">
-                                    <span id="user-name" class="username">${posts[postEl].username}</span>
-                                    <span id="caption" class="caption">${posts[postEl].comment}</span>
+                                    <span id="user-name" class="username">${postEl.username}</span>
+                                    <span id="caption" class="caption">${postEl.comment}</span>
                                 </p>
                             </div>
                         </div>
