@@ -16,27 +16,27 @@ function renderPost() {
         <section class="post">
             <div class="post-header">
                 <div>
-                    <img id="post-user-img" class="post-user-img" src="${postEl.avatar}" alt="avatar-courbet">
+                    <img class="post-user-img" src="${postEl.avatar}" alt="avatar-courbet">
                 </div>
                 <div class="post-header-typography">
-                    <p id="name" class="name">${postEl.name}</p>
-                    <p id="location" class="location">${postEl.location}</p>
+                    <p class="name">${postEl.name}</p>
+                    <p class="location">${postEl.location}</p>
                 </div>
             </div>
             <div class="post-container-img">
-                <img id="post-img" class="post-img" src="${postEl.post}" alt="post - courbet">
+                <img class="post-img" src="${postEl.post}" alt="post - courbet">
             </div>
             <div class="post-footer">
                 <div class="icons">
-                    <img id="icons-heart" class="liked" src="images/icon-heart.png" alt="icon-heart">
-                        <img id="icons-comment" src="images/icon-comment.png" alt="icon-comment">
-                            <img id="icons-dm" src="images/icon-dm.png" alt="icon-dm">
+                    <img class="liked" src="images/icon-heart.png" alt="icon-heart" data-like="${postEl.uuid}">
+                        <img class="comment" src="images/icon-comment.png" alt="icon-comment">
+                            <img class="dm" src="images/icon-dm.png" alt="icon-dm">
                             </div>
                             <div class="post-info">
-                                <p id="like-count" class="likes">${postEl.likes} Likes</p>
+                                <p class="likes">${postEl.likes} Likes</p>
                                 <p class="post-caption">
-                                    <span id="user-name" class="username">${postEl.username}</span>
-                                    <span id="caption" class="caption">${postEl.comment}</span>
+                                    <span class="username">${postEl.username}</span>
+                                    <span class="caption">${postEl.comment}</span>
                                 </p>
                             </div>
                         </div>
@@ -46,43 +46,33 @@ function renderPost() {
     main.innerHTML = renderPost
 }
 
-renderPost()
+
 
 // like logic
-const imgPost = document.getElementById("post-img")
-const likesCount = document.getElementById("like-count")
-const liked = document.getElementById("icons-heart")
-let isLiked = false
 
-imgPost.addEventListener("dblclick", function () {
-    if (!isLiked) {
-        liked.src = "images/heart.png"
-        isLiked = true
-        posts[0].likes += 1
-        likesCount.innerHTML = `${posts[0]["likes"]} likes`
-    } else {
-        liked.src = "images/icon-heart.png"
-        isLiked = false
-        posts[0].likes -= 1
-        likesCount.innerHTML = `${posts[0]["likes"]} likes`
+
+
+document.addEventListener('click', function (e) {
+    if (e.target.dataset.like) {
+        targetPostlike(e.target.dataset.like)
     }
 })
 
-liked.addEventListener("click", function () {
-    if (!isLiked) {
-        liked.src = "images/heart.png"
-        isLiked = true
-        posts[0].likes += 1
-        likesCount.innerHTML = `${posts[0]["likes"]} likes`
+function targetPostlike(likeUuid) {
+    const targetObj = posts.filter(function (post) {
+        return post.uuid === likeUuid
+    })[0]
+
+    if (!targetObj.isLiked) {
+        targetObj.likes++
+        targetObj.isLiked = true
+
     } else {
-        liked.src = "images/icon-heart.png"
-        isLiked = false
-        posts[0].likes -= 1
-        likesCount.innerHTML = `${posts[0]["likes"]} likes`
+        targetObj.likes--
+        targetObj.isLiked = false
+
     }
-
-})
-
-
-
+    renderPost()
+}
+renderPost()
 

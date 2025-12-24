@@ -127,23 +127,23 @@ header {
 
 }
 
-#icons-heart {
+.liked {
     width: 22.3px;
     height: 18.65px;
 }
 
-#icons-comment {
+.comment {
     width: 22.65px;
     height: 18.65px;
 }
 
-#icons-dm {
+.dm {
     width: 22.38px;
     height: 18.65px;
 }
 
-#icons-heart:hover,
-#icons-dm:hover,
-#icons-comment:hover {
+.liked:hover,
+.dm:hover,
+.comment:hover {
     transform: scale(1.2);
 }
